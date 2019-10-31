@@ -50,14 +50,8 @@ class Register extends Component {
         return (
             <div className="container" Style="margin-top: 100px; background-color:#f8f8f8; border:outset">
                 <div className="row">
-                    <div className="col-6" Style="border:">
-                        <iframe id="video-2-inner" frameBorder="0" allowFullScreen="1"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                title="YouTube video player" width="" height="10px"
-                                src="https://www.youtube.com/embed/_D1tQ1IBxtw?autohide=1&amp;autoplay=1&amp;fs=0&amp;showinfo=0&amp;modestBranding=1&amp;start=0&amp;controls=0&amp;rel=0&amp;disablekb=1&amp;iv_load_policy=3&amp;wmode=transparent&amp;enablejsapi=1&amp;origin=http%3A%2F%2Fwww.goteborgsmoske.se&amp;widgetid=1"
-                                Style="width: 540px; height:340px; z-index: -1; visibility: visible;"></iframe>
-                    </div>
-                    <div className="col-6">
+
+                    <div className="col">
                         <form onSubmit={this.onSubmit}>
                             <div className="row">
                                 <div className="col">

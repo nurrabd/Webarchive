@@ -19,6 +19,8 @@ public class User {
     @Column
     @Email
     private String email;
-
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id", referencedColumnName = "id")
+    private Site site;
 
 }

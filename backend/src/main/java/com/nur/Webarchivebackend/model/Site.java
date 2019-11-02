@@ -12,7 +12,7 @@ public class Site {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column
-    private Integer id;
+    private Integer siteId;
     @Column
     private String name;
     @Column
@@ -21,6 +21,7 @@ public class Site {
     private String description;
     @Column
     private String url;
-
+    @Column(name = "id")
+    private Integer id;
 
 }

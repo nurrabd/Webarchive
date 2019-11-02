@@ -20,10 +20,7 @@ public class user {
 
     @PostMapping("/register")
     public String login(@RequestBody User user)  {
-
-
-
-    userService.register(user);
+        userService.register(user);
 
     return "completed";
     }

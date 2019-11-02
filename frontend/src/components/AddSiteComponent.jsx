@@ -1,21 +1,22 @@
 import React, {Component} from 'react';
 import PropTypes from "prop-types"
 import {connect} from "react-redux";
-import {getUsersById, login} from "../actions/userActions";
+import {getUsersById, AddNewSite} from "../actions/userActions";
 
 
 
 class AddSiteComponent extends Component {
 
     componentDidMount() {
-        this.props.getUsersById();
+       // this.props.getUsersById(this.props.user.id);
+        //
     }
 
     constructor() {
         super();
 
         this.state = {
-            userId: ""
+            userId: "",
             name: '',
             color: '',
             description: '',
@@ -33,7 +34,7 @@ class AddSiteComponent extends Component {
     onSubmit(event) {
         event.preventDefault();
         const newSite = {
-            userId: this.state.userId,
+            userId: this.props.user.id,
             name: this.state.name,
             color: this.state.color,
             description: this.state.description,
@@ -41,15 +42,15 @@ class AddSiteComponent extends Component {
 
         };
 
-        this.props.login(newSite, this.props.history);
+        this.props.AddNewSite(newSite, this.props.history);
 
     }
 
 
     render() {
+        console.log(this.props.user.id);
 
 
-        console.log(this.props.user.id)
 
         return (
             <div className="container" Style="margin-top: 100px; background-color:#f8f8f8; border:outset">
@@ -63,23 +64,42 @@ class AddSiteComponent extends Component {
 
                                     <p/>
                                     <label htmlFor="email"> Email</label>
-                                    <input type="email" id="email" className="form-control"
+                                    <input type="text" id="name" className="form-control"
                                            Style="height:50px; border: outset"
-                                           placeholder="Email"
-                                           name="email"
+                                           placeholder="name"
+                                           name="name"
                                            required
-                                           value={this.state.email}
+                                           value={this.state.name}
+                                           onChange={this.onChange}
+                                    />
+                                    <p/>
+                                    <label htmlFor="color"> color</label>
+                                    <input type="text" id="color" className="form-control"
+                                           Style="height:50px; border: outset"
+                                           placeholder="color"
+                                           name="color"
+                                           required
+                                           value={this.state.color}
                                            onChange={this.onChange}
 
                                     />
-                                    <p/>
-                                    <label htmlFor="password"> Password</label>
-                                    <input type="password" id="password" className="form-control"
+                                    <label htmlFor="description"> description</label>
+                                    <input type="text" id="description" className="form-control"
                                            Style="height:50px; border: outset"
-                                           placeholder="password"
-                                           name="password"
+                                           placeholder="description"
+                                           name="description"
                                            required
-                                           value={this.state.password}
+                                           value={this.state.description}
+                                           onChange={this.onChange}
+
+                                    />
+                                    <label htmlFor="URL"> URL</label>
+                                    <input type="text" id="URL" className="form-control"
+                                           Style="height:50px; border: outset"
+                                           placeholder="URL"
+                                           name="URL"
+                                           required
+                                           value={this.state.URL}
                                            onChange={this.onChange}
 
                                     />
@@ -113,7 +133,7 @@ class AddSiteComponent extends Component {
 
 AddSiteComponent.propTypes = {
     getUsersById: PropTypes.func.isRequired,
-    login: PropTypes.func.isRequired
+    AddNewSite: PropTypes.func.isRequired
 
 };
 
@@ -124,4 +144,4 @@ const mapStateToProps = state => ({
 
 export default connect(
     mapStateToProps,
-    {getUsersById, login})(AddSiteComponent);
+    {getUsersById, AddNewSite})(AddSiteComponent);

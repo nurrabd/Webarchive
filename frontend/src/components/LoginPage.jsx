@@ -8,7 +8,7 @@ import {getUsersById, login} from "../actions/userActions";
 class LoginPage extends Component {
 
     componentDidMount() {
-        this.props.getUsersById();
+       // this.props.getUsersById(1);
     }
 
     constructor() {
@@ -30,22 +30,19 @@ class LoginPage extends Component {
     }
     onSubmit(event) {
         event.preventDefault();
-        const newuser = {
+        const newUser = {
 
             password: this.state.password,
             email:  this.state.email
 
         };
 
-        this.props.login(newuser, this.props.history);
+        this.props.login(newUser, this.props.history);
 
     }
 
 
     render() {
-
-
-     console.log(this.props.user.id)
 
         return (
             <div className="container" Style="margin-top: 100px; background-color:#f8f8f8; border:outset">

@@ -5,9 +5,9 @@ export const FETCH_USER = 'FETCH_USER';
 
 
 
-export const getUsersById = () => async dispatch => {
+export const getUsersById = (id) => async dispatch => {
 
-    const res = await axios.get(`http://localhost:8080/api/user/all`);
+    const res = await axios.get(`http://localhost:8080/api/user/findUserById/${id}`);
     dispatch({
         type: FETCH_USER,
         payload: res.data
@@ -29,6 +29,10 @@ export const login = (theUser, history) => async dispatch => {
     }
 };
 
+export const AddNewSite = (theUser, history) => async dispatch => {
+    const res = await axios.post(`http://localhost:8080/api/site/register`, theUser);
+
+};
 
 
 

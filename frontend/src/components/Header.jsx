@@ -5,7 +5,7 @@ class Header extends Component {
     render() {
         return (
             <Navbar bg="" expand="lg" Style="border: outset; background-color: ">
-                {/*
+
                 <Navbar.Brand href="#home" >
 
                     <div Style="width:300px"></div>
@@ -22,7 +22,7 @@ class Header extends Component {
                     </Nav>
 
                 </Navbar.Collapse>
-                */}
+
             </Navbar>
         );
     }

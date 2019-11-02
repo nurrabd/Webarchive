@@ -6,6 +6,7 @@ import Register from "./components/LoginPage";
 import Footer from "./components/Footer";
 import {BrowserRouter, Router, Route} from "react-router-dom";
 import SitePage from "./components/SitePage";
+import AddSiteComponent from "./components/AddSiteComponent";
 function App() {
   return (
 
@@ -16,7 +17,8 @@ function App() {
         <Header/>
 
         <Route exact path="/" component={Register}/>
-        <Route  path="/success/:id" component={SitePage}/>
+        <Route  exact path="/success/:id" component={SitePage}/>
+        <Route exact path="/addSite" component={AddSiteComponent}/>
    <Footer/>
 
     </div>

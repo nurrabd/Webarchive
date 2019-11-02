@@ -1,7 +1,7 @@
 package com.nur.Webarchivebackend.service;
 
-import com.nur.Webarchivebackend.Repository.UserRepo;
-import com.nur.Webarchivebackend.model.User;
+import com.nur.Webarchivebackend.Repository.SiteRepo;
+import com.nur.Webarchivebackend.model.Site;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,19 +13,19 @@ public class SiteService {
 
 
    @Autowired
-   private UserRepo userRepo;
+   private SiteRepo siteRepo;
 
-    public List<User> getAll() {
+    public List<Site> getAll() {
 
-        return userRepo.findAll();
+        return siteRepo.findAll();
     }
 
-    public void register(User user){
+    public void register(Site site){
        // if(user.getEmail().equals(userRepo.findAll().forEach();)){
 
         //}
 
-        userRepo.save(user);
+        siteRepo.save(site);
 
     }
 

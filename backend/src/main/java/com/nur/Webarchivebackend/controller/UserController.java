@@ -8,7 +8,7 @@ import java.util.List;
 @RestController
 @CrossOrigin
 @RequestMapping("api/user")
-public class user {
+public class UserController {
 
     @Autowired
     private UserService userService;

@@ -231,6 +231,10 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.nur.Webarchivebackend.controller" />
+      <recent name="com.nur.Webarchivebackend.model" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/com/nur/Webarchivebackend" />
       <recent name="$PROJECT_DIR$/src/main/resources" />

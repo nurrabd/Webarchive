@@ -21,7 +21,8 @@ public class Site {
     private String description;
     @Column
     private String url;
-    @Column(name = "id")
-    private Integer id;
+
+    @Column(name = "userId")
+    private Integer userId;
 
 }

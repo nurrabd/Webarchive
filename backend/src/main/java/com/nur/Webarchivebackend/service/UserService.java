@@ -18,7 +18,8 @@ public class UserService {
    private UserRepo userRepo;
 
     public List<User> getAll() {
-
+     //  userRepo.findByEmail("nurhusein@gmail.com");
+        System.out.println(userRepo.findByEmail("nurhusein11@gmail.com").getEmail());
         return userRepo.findAll();
     }
 
@@ -26,6 +27,7 @@ public class UserService {
        // if(user.getEmail().equals(userRepo.findAll().forEach();)){
 
         //}
+
 
         userRepo.save(user);
 

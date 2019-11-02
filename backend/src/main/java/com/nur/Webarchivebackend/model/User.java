@@ -4,6 +4,8 @@ import javax.validation.constraints.Email;
 
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 @Entity
 public class User {
@@ -11,16 +13,17 @@ public class User {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column
-    private Integer id;
+    private Integer userId;
     @Column
     private String name;
     @Column
     private String password;
-    @Column
+    @Column(unique = true, length = 250)
     @Email
     private String email;
+
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id", referencedColumnName = "id")
-    private Site site;
+    @JoinColumn(name = "userId", referencedColumnName = "userId")
+    private List<Site> sites;
 
 }

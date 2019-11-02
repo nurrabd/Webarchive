@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import PropTypes from "prop-types"
 import {connect} from "react-redux";
-import {getUsersById, registerUsers} from "../actions/userActions";
+import {getUsersById, login} from "../actions/userActions";
 
 
 
-class Register extends Component {
+class AddSiteComponent extends Component {
 
     componentDidMount() {
         this.props.getUsersById();
@@ -15,9 +15,11 @@ class Register extends Component {
         super();
 
         this.state = {
-
+            userId: ""
             name: '',
-            password: '',
+            color: '',
+            description: '',
+            URL: ''
 
         };
         this.onChange = this.onChange.bind(this);
@@ -30,14 +32,16 @@ class Register extends Component {
     }
     onSubmit(event) {
         event.preventDefault();
-        const newuser = {
+        const newSite = {
+            userId: this.state.userId,
             name: this.state.name,
-            password: this.state.password,
-            email:  this.state.email
+            color: this.state.color,
+            description: this.state.description,
+            URL: this.state.URL
 
         };
 
-        this.props.registerUsers(newuser, this.props.history);
+        this.props.login(newSite, this.props.history);
 
     }
 
@@ -45,7 +49,7 @@ class Register extends Component {
     render() {
 
 
-     console.log(this.props.user.id)
+        console.log(this.props.user.id)
 
         return (
             <div className="container" Style="margin-top: 100px; background-color:#f8f8f8; border:outset">
@@ -55,35 +59,27 @@ class Register extends Component {
                         <form onSubmit={this.onSubmit}>
                             <div className="row">
                                 <div className="col">
-                                    <label htmlFor="username"> username</label>
-                                    <input type="text" id="username" className="form-control"
-                                           Style="height:50px ; border: outset"
-                                           placeholder="Full Name"
-                                           name="name"
-                                           required
-                                           value={this.state.name}
-                                           onChange={this.onChange}
 
-                                    />
-                                    <p/>
-                                    <label htmlFor="password"> password</label>
-                                    <input type="password" id="password" className="form-control"
-                                           Style="height:50px; border: outset"
-                                           placeholder="password"
-                                           name="password"
-                                           required
-                                           value={this.state.password}
-                                           onChange={this.onChange}
 
-                                    />
                                     <p/>
-                                    <label htmlFor="email"> email</label>
+                                    <label htmlFor="email"> Email</label>
                                     <input type="email" id="email" className="form-control"
                                            Style="height:50px; border: outset"
                                            placeholder="Email"
                                            name="email"
                                            required
                                            value={this.state.email}
+                                           onChange={this.onChange}
+
+                                    />
+                                    <p/>
+                                    <label htmlFor="password"> Password</label>
+                                    <input type="password" id="password" className="form-control"
+                                           Style="height:50px; border: outset"
+                                           placeholder="password"
+                                           name="password"
+                                           required
+                                           value={this.state.password}
                                            onChange={this.onChange}
 
                                     />
@@ -108,16 +104,16 @@ class Register extends Component {
 
 
 
-                    </div>
+            </div>
 
 
         );
     }
 }
 
-Register.propTypes = {
+AddSiteComponent.propTypes = {
     getUsersById: PropTypes.func.isRequired,
-    registerUsers: PropTypes.func.isRequired
+    login: PropTypes.func.isRequired
 
 };
 
@@ -128,4 +124,4 @@ const mapStateToProps = state => ({
 
 export default connect(
     mapStateToProps,
-    {getUsersById, registerUsers})(Register);
+    {getUsersById, login})(AddSiteComponent);

@@ -24,16 +24,20 @@ public class UserService {
     }
 
     public void register(User user){
-       // if(user.getEmail().equals(userRepo.findAll().forEach();)){
-
-        //}
-
-
         userRepo.save(user);
-
     }
 
+    public User login(User user){
 
+
+        User newUser = userRepo.findByEmail(user.getEmail());
+
+                if(newUser.getPassword().equals(user.getPassword())){
+                    return newUser;
+
+                }
+                return null;
+    }
 
 
 }

@@ -2,10 +2,10 @@ import React from 'react';
 import {Provider} from "react-redux";
 import store from "./store";
 import Header from "./components/Header";
-import Register from "./components/Register";
+import Register from "./components/LoginPage";
 import Footer from "./components/Footer";
 import {BrowserRouter, Router, Route} from "react-router-dom";
-import EmailPage from "./components/EmailPage";
+import SitePage from "./components/SitePage";
 function App() {
   return (
 
@@ -16,7 +16,7 @@ function App() {
         <Header/>
 
         <Route exact path="/" component={Register}/>
-        <Route  path="/success" component={EmailPage}/>
+        <Route  path="/success/:id" component={SitePage}/>
    <Footer/>
 
     </div>

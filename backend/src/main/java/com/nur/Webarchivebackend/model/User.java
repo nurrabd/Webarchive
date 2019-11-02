@@ -15,8 +15,6 @@ public class User {
     @Column
     private Integer userId;
     @Column
-    private String name;
-    @Column
     private String password;
     @Column(unique = true, length = 250)
     @Email

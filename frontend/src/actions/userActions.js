@@ -2,6 +2,8 @@ import axios from "axios";
 
 
 export const FETCH_USER = 'FETCH_USER';
+export const FETCH_SITES = 'FETCH_SITES';
+
 
 
 
@@ -33,6 +35,17 @@ export const AddNewSite = (theUser, history, id) => async dispatch => {
     const res = await axios.post(`http://localhost:8080/api/site/register`, theUser);
     history.push(`/success/${id}`)
 
+};
+
+
+
+export const getSitesById = (id) => async dispatch => {
+
+    const res = await axios.get(`http://localhost:8080/api/user/findUserById/${id}`);
+    dispatch({
+        type: FETCH_SITES,
+        payload: res.data
+    });
 };
 
 

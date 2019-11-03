@@ -41,7 +41,7 @@ export const AddNewSite = (theUser, history, id) => async dispatch => {
 
 export const getSitesById = (id) => async dispatch => {
 
-    const res = await axios.get(`http://localhost:8080/api/user/findUserById/${id}`);
+    const res = await axios.get(`http://localhost:8080/api/site/findUserById/${id}`);
     dispatch({
         type: FETCH_SITES,
         payload: res.data
@@ -55,7 +55,9 @@ export const updateSite = (siteId, update, history, userId) => async dispatch =>
 };
 
 export const deleteSite = (siteId) => async dispatch => {
-    await axios.delete(`http://localhost:8080/api/site/delete/${7}`);
+    console.log(siteId);
+
+    await axios.delete(`http://localhost:8080/api/site/delete/${3}`);
 
 };
 

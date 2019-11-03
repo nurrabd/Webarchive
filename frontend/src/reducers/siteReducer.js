@@ -12,7 +12,7 @@ export default function (state = initialState, action) {
         case FETCH_SITES:
             return {
                 ...state,
-                user: action.payload
+                site: action.payload
             };
 
 

@@ -7,28 +7,14 @@ import {getUsersById, deleteSite} from "../actions/Actions";
 import Button from "react-bootstrap/Button";
 
 class SitePage extends Component {
-
-
-
-
-        componentDidMount() {
-            this.props.getUsersById(this.props.match.params.id);
-            //console.log(this.props.user.id);
-
-    }
-    onDeleteClick() {
-        const id = "";
-        this.props.deleteSite(id, this.props.history, 1);
-        window.location.reload();
-
+    componentDidMount() {
+        this.props.getUsersById(this.props.match.params.id);
     }
 
     renderWorkEx() {
-
         return _.map(this.props.user.sites, list => {
-
-
             return (
+
 
                 <div>
                     Site name:   {list.name}
@@ -40,16 +26,9 @@ class SitePage extends Component {
                     Site URL:  {list.URL}
 
 
-                    <hr/>
-                    <Button
-                        variant="outline-danger"
-                        size="lg"
-                        block
-                        onClick={this.onDeleteClick.bind(this)}
-                        type="submit">
 
-                        Delete
-                    </Button>
+                    <hr/>
+
 
                 </div>
             )
@@ -59,17 +38,18 @@ class SitePage extends Component {
 
     render() {
 
+
         return (
             <div>
-            <Link className="glyphicon glyphicon-plus"  to={`/addSite`}>
-                Add new Site
-            </Link>
+                <Link className="glyphicon glyphicon-plus"  to={`/addSite`}>
+                    Add new Site
+                </Link>
 
                 <div Style="margin-top: 50px" />
 
-            <div className="ui divided list">
-                { this.renderWorkEx()}
-            </div>
+                <div className="ui divided list">
+                    { this.renderWorkEx()}
+                </div>
             </div>
 
         );

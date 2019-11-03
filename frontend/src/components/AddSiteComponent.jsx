@@ -48,7 +48,7 @@ class AddSiteComponent extends Component {
 
 
     render() {
-        console.log(this.props.user.userId);
+
 
 
 

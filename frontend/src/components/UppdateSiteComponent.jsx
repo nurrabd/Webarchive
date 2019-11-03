@@ -2,14 +2,16 @@ import React, {Component} from 'react';
 import PropTypes from "prop-types"
 import {connect} from "react-redux";
 import {getSitesById, updateSite} from "../actions/Actions";
+import Button from "react-bootstrap/Button";
 
 
 
 class UppdateSiteComponent extends Component {
 
     componentDidMount() {
-         this.props.getSitesById(this.props.user.id);
+         this.props.getSitesById(this.props.match.params.id);
         //
+        console.log(this.props);
     }
     componentWillReceiveProps(nextProps) {
         const {
@@ -61,6 +63,14 @@ class UppdateSiteComponent extends Component {
         };
 
         this.props.updateSite(newSite, this.props.history, this.props.user.userId);
+
+    }
+
+    onDeleteClick() {
+
+
+        this.props.deleteSite(this.props.match.id, this.props.history);
+        window.location.reload();
 
     }
 
@@ -131,7 +141,15 @@ class UppdateSiteComponent extends Component {
                                 </div>
                             </div>
                         </form>
+                        <Button
+                            variant="outline-danger"
+                            size="sm"
+                            block
+                            onClick={this.onDeleteClick.bind(this)}
+                            type="submit">
 
+                            Delete
+                        </Button>
                     </div>
                 </div>
 
@@ -153,7 +171,7 @@ UppdateSiteComponent.propTypes = {
 };
 
 const mapStateToProps = state => ({
-    site: state.site,
+    site: state.site.site,
     user: state.user.user
 
 });

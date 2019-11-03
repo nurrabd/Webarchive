@@ -13,10 +13,7 @@ class Header extends Component {
 
                 <Navbar.Collapse id="">
                     <Nav className="mr-auto">
-                        <Nav.Link href="/logIn" Style=" width:190px">
-                          Loggin
 
-                        </Nav.Link>
 
 
                     </Nav>

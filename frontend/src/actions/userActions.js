@@ -29,8 +29,9 @@ export const login = (theUser, history) => async dispatch => {
     }
 };
 
-export const AddNewSite = (theUser, history) => async dispatch => {
+export const AddNewSite = (theUser, history, id) => async dispatch => {
     const res = await axios.post(`http://localhost:8080/api/site/register`, theUser);
+    history.push(`/success/${id}`)
 
 };
 

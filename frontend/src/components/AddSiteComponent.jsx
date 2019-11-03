@@ -8,7 +8,7 @@ import {getUsersById, AddNewSite} from "../actions/userActions";
 class AddSiteComponent extends Component {
 
     componentDidMount() {
-       // this.props.getUsersById(this.props.user.id);
+        // this.props.getUsersById(this.props.user.id);
         //
     }
 
@@ -34,7 +34,7 @@ class AddSiteComponent extends Component {
     onSubmit(event) {
         event.preventDefault();
         const newSite = {
-            userId: this.props.user.id,
+            userId:this.props.user.userId,
             name: this.state.name,
             color: this.state.color,
             description: this.state.description,
@@ -42,18 +42,19 @@ class AddSiteComponent extends Component {
 
         };
 
-        this.props.AddNewSite(newSite, this.props.history);
+        this.props.AddNewSite(newSite, this.props.history, this.props.user.userId);
 
     }
 
 
     render() {
-        console.log(this.props.user.id);
+        console.log(this.props.user.userId);
 
 
 
         return (
             <div className="container" Style="margin-top: 100px; background-color:#f8f8f8; border:outset">
+                <h4 Style="font-family:serif; font-size:35px; text-align: center">Add new site </h4>
                 <div className="row">
 
                     <div className="col">
@@ -63,7 +64,7 @@ class AddSiteComponent extends Component {
 
 
                                     <p/>
-                                    <label htmlFor="email"> Email</label>
+                                    <label htmlFor="email"> Name</label>
                                     <input type="text" id="name" className="form-control"
                                            Style="height:50px; border: outset"
                                            placeholder="name"

@@ -20,7 +20,7 @@ class AddSiteComponent extends Component {
             name: '',
             color: '',
             description: '',
-            URL: ''
+            url: ''
 
         };
         this.onChange = this.onChange.bind(this);
@@ -38,9 +38,10 @@ class AddSiteComponent extends Component {
             name: this.state.name,
             color: this.state.color,
             description: this.state.description,
-            URL: this.state.URL
+            url: this.state.url
 
         };
+        console.log(newSite);
 
         this.props.AddNewSite(newSite, this.props.history, this.props.user.userId);
 
@@ -54,6 +55,7 @@ class AddSiteComponent extends Component {
 
         return (
             <div className="container" Style="margin-top: 100px; background-color:#f8f8f8; border:outset">
+
                 <h4 Style="font-family:serif; font-size:35px; text-align: center">Add new site </h4>
                 <div className="row">
 
@@ -95,12 +97,12 @@ class AddSiteComponent extends Component {
 
                                     />
                                     <label htmlFor="URL"> URL</label>
-                                    <input type="text" id="URL" className="form-control"
+                                    <input type="text" id="url" className="form-control"
                                            Style="height:50px; border: outset"
                                            placeholder="URL"
-                                           name="URL"
+                                           name="url"
                                            required
-                                           value={this.state.URL}
+                                           value={this.state.url}
                                            onChange={this.onChange}
 
                                     />

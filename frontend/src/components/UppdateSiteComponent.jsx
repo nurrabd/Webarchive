@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from "prop-types"
 import {connect} from "react-redux";
-import {getSitesById, updateSite} from "../actions/Actions";
+import {getSitesById, updateSite, deleteSite} from "../actions/Actions";
 import Button from "react-bootstrap/Button";
 
 
@@ -11,7 +11,7 @@ class UppdateSiteComponent extends Component {
     componentDidMount() {
          this.props.getSitesById(this.props.match.params.id);
         //
-        console.log(this.props);
+        console.log(this.props.user.userId);
     }
     componentWillReceiveProps(nextProps) {
         const {
@@ -36,7 +36,7 @@ class UppdateSiteComponent extends Component {
         super();
 
         this.state = {
-            userId: "",
+
             name: '',
             color: '',
             description: '',
@@ -54,7 +54,7 @@ class UppdateSiteComponent extends Component {
     onSubmit(event) {
         event.preventDefault();
         const newSite = {
-            userId:this.props.user.userId,
+
             name: this.state.name,
             color: this.state.color,
             description: this.state.description,
@@ -62,15 +62,16 @@ class UppdateSiteComponent extends Component {
 
         };
 
-        this.props.updateSite(newSite, this.props.history, this.props.user.userId);
+        this.props.updateSite(this.props.match.params.id, newSite, this.props.history, this.props.user.userId);
 
     }
 
     onDeleteClick() {
 
+        console.log(this.props.match.params.id);
 
-        this.props.deleteSite(this.props.match.id, this.props.history);
-        window.location.reload();
+        this.props.deleteSite(this.props.match.params.id, this.props.history, this.props.user.userId);
+
 
     }
 
@@ -78,7 +79,7 @@ class UppdateSiteComponent extends Component {
     render() {
         return (
             <div className="container" Style="margin-top: 100px; background-color:#f8f8f8; border:outset">
-                <h4 Style="font-family:serif; font-size:35px; text-align: center">Add new site </h4>
+                <h4 Style="font-family:serif; font-size:35px; text-align: center">Update or delete site </h4>
                 <div className="row">
 
                     <div className="col">
@@ -135,7 +136,7 @@ class UppdateSiteComponent extends Component {
                                 <div className="col">
                                     <p/>
                                     <button type="submit" Style="width:100%; height:50px"
-                                            className="btn-primary"> Continue
+                                            className="btn-primary" variant="outline-danger"> Continue
                                     </button>
                                     <p/>
                                 </div>
@@ -143,13 +144,15 @@ class UppdateSiteComponent extends Component {
                         </form>
                         <Button
                             variant="outline-danger"
-                            size="sm"
+                            size="lg"
                             block
+                            Style="width:100%; height:50px"
                             onClick={this.onDeleteClick.bind(this)}
                             type="submit">
 
                             Delete
                         </Button>
+                        <p/>
                     </div>
                 </div>
 
@@ -166,7 +169,8 @@ class UppdateSiteComponent extends Component {
 
 UppdateSiteComponent.propTypes = {
     getSitesById: PropTypes.func.isRequired,
-    updateSite: PropTypes.func.isRequired
+    updateSite: PropTypes.func.isRequired,
+    deleteSite:  PropTypes.func.isRequired
 
 };
 
@@ -178,4 +182,4 @@ const mapStateToProps = state => ({
 
 export default connect(
     mapStateToProps,
-    {getSitesById, updateSite})(UppdateSiteComponent);
+    {getSitesById, updateSite, deleteSite})(UppdateSiteComponent);

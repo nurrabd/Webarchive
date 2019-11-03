@@ -23,13 +23,15 @@ class SitePage extends Component {
                     <br/>
                     Site description:  {list.description}
                     <br/>
-                    Site URL:  {list.URL}
+                    <Link className="glyphicon glyphicon-plus"  to={`${list.url}`}>
+                     Sit url :    {list.url}
+                    </Link>
 
-
-
+                        <br/>
+                    <Link className="glyphicon glyphicon-plus"  to={`/EditSite/${list.siteId}`}>
+                       Edit or delete
+                    </Link>
                     <hr/>
-
-
                 </div>
             )
         });

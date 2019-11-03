@@ -25,7 +25,7 @@ export const registerUsers = (newuser, history) => async dispatch => {
 
 export const login = (theUser, history) => async dispatch => {
     const res = await axios.post(`http://localhost:8080/api/user/login`, theUser);
-    if(res.status===200){
+    if(res.data != null){
 
         history.push(`/success/${res.data.userId}`)
     }
@@ -41,7 +41,7 @@ export const AddNewSite = (theUser, history, id) => async dispatch => {
 
 export const getSitesById = (id) => async dispatch => {
 
-    const res = await axios.get(`http://localhost:8080/api/site/findUserById/${id}`);
+    const res = await axios.get(`http://localhost:8080/api/site/findSiteById/${id}`);
     dispatch({
         type: FETCH_SITES,
         payload: res.data
@@ -50,15 +50,16 @@ export const getSitesById = (id) => async dispatch => {
 
 export const updateSite = (siteId, update, history, userId) => async dispatch => {
     await axios.put(`http://localhost:8080/api/site/update/${siteId}`, update);
-    history.push(`/ResumeBoard/${userId}`);
+  history.push(`/success/${userId}`);
+
 
 };
 
-export const deleteSite = (siteId) => async dispatch => {
+export const deleteSite = (siteId, histroy , userId) => async dispatch => {
     console.log(siteId);
 
-    await axios.delete(`http://localhost:8080/api/site/delete/${3}`);
-
+    await axios.delete(`http://localhost:8080/api/site/delete/${siteId}`);
+        histroy.push(`/success/${userId}`);
 };
 
 

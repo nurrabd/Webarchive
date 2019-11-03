@@ -1,4 +1,4 @@
-import {FETCH_USER} from "../actions/userActions";
+import {FETCH_USER} from "../actions/Actions";
 
 const initialState = {
     validToken: false,

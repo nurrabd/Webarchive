@@ -3,19 +3,31 @@ import {Link} from 'react-router-dom';
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import _ from 'lodash';
-import {getUsersById, login} from "../actions/userActions";
+import {getUsersById, deleteSite} from "../actions/Actions";
 import Button from "react-bootstrap/Button";
 
 class SitePage extends Component {
+
+
+
 
         componentDidMount() {
             this.props.getUsersById(this.props.match.params.id);
             //console.log(this.props.user.id);
 
     }
+    onDeleteClick() {
+        const id = "";
+        this.props.deleteSite(id, this.props.history, 1);
+        window.location.reload();
+
+    }
 
     renderWorkEx() {
+
         return _.map(this.props.user.sites, list => {
+
+
             return (
 
                 <div>
@@ -26,7 +38,19 @@ class SitePage extends Component {
                     Site description:  {list.description}
                     <br/>
                     Site URL:  {list.URL}
+
+
                     <hr/>
+                    <Button
+                        variant="outline-danger"
+                        size="lg"
+                        block
+                        onClick={this.onDeleteClick.bind(this)}
+                        type="submit">
+
+                        Delete
+                    </Button>
+
                 </div>
             )
         });
@@ -54,7 +78,7 @@ class SitePage extends Component {
 
 SitePage.propTypes = {
     getUsersById: PropTypes.func.isRequired,
-    login: PropTypes.func.isRequired
+    deleteSite: PropTypes.func.isRequired
 
 };
 
@@ -65,4 +89,4 @@ const mapStateToProps = state => ({
 
 export default connect(
     mapStateToProps,
-    {getUsersById})(SitePage);
+    {getUsersById, deleteSite})(SitePage);

@@ -26,7 +26,15 @@ public class SiteService {
 
 
     public Site update(Site l, int id) {
+
       return new Site();
 
+    }
+
+
+    public String delete(int id) {
+        System.out.println(id);
+        siteRepo.deleteById(id);
+        return ";";
     }
 }

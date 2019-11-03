@@ -32,4 +32,10 @@ public class SiteController {
     public Site updateLanguages(@RequestBody Site l, @PathVariable int id) {
         return siteService.update(l , id);
     }
+
+    @DeleteMapping  ("/delete/{id}")
+    public String delete(@PathVariable int id) {
+System.out.println(id);
+        return siteService.delete(id);
+    }
 }

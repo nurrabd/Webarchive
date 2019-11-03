@@ -32,7 +32,7 @@ export const login = (theUser, history) => async dispatch => {
 };
 
 export const AddNewSite = (theUser, history, id) => async dispatch => {
-    const res = await axios.post(`http://localhost:8080/api/site/register`, theUser);
+     await axios.post(`http://localhost:8080/api/site/register`, theUser);
     history.push(`/success/${id}`)
 
 };
@@ -49,9 +49,13 @@ export const getSitesById = (id) => async dispatch => {
 };
 
 export const updateSite = (siteId, update, history, userId) => async dispatch => {
-    await axios.put(`http://localhost:8080/api/site/update/${id}`, update);
+    await axios.put(`http://localhost:8080/api/site/update/${siteId}`, update);
     history.push(`/ResumeBoard/${userId}`);
+    
+};
 
+export const deleteSite = (siteId) => async dispatch => {
+    await axios.delete(`http://localhost:8080/api/site/delete/${7}`);
 
 };
 

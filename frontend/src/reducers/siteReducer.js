@@ -1,4 +1,4 @@
-import {FETCH_SITES} from "../actions/userActions";
+import {FETCH_SITES} from "../actions/Actions";
 
 const initialState = {
 

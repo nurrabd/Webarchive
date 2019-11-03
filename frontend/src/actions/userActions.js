@@ -48,7 +48,12 @@ export const getSitesById = (id) => async dispatch => {
     });
 };
 
+export const updateSite = (siteId, update, history, userId) => async dispatch => {
+    await axios.put(`http://localhost:8080/api/site/update/${id}`, update);
+    history.push(`/ResumeBoard/${userId}`);
 
+
+};
 
 
 

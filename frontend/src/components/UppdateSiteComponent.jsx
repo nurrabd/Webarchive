@@ -1,28 +1,32 @@
 import React, {Component} from 'react';
 import PropTypes from "prop-types"
 import {connect} from "react-redux";
-import {getUsersById, AddNewSite} from "../actions/userActions";
+import {getSitesById, updateSite} from "../actions/userActions";
 
 
 
 class UppdateSiteComponent extends Component {
 
     componentDidMount() {
-        // this.props.getUsersById(this.props.user.id);
+         this.props.getSitesById(this.props.user.id);
         //
     }
     componentWillReceiveProps(nextProps) {
         const {
-            title,
-            start_date,
-            end_date,
+            userId,
+            name,
+            color,
+            description,
+            URL
 
-        } = nextProps.course;
+        } = nextProps.site;
 
         this.setState({
-            title,
-            start_date,
-            end_date
+            userId,
+            name,
+            color,
+            description,
+            URL
         });
     }
 
@@ -56,16 +60,12 @@ class UppdateSiteComponent extends Component {
 
         };
 
-        this.props.AddNewSite(newSite, this.props.history, this.props.user.userId);
+        this.props.updateSite(newSite, this.props.history, this.props.user.userId);
 
     }
 
 
     render() {
-        console.log(this.props.user.userId);
-
-
-
         return (
             <div className="container" Style="margin-top: 100px; background-color:#f8f8f8; border:outset">
                 <h4 Style="font-family:serif; font-size:35px; text-align: center">Add new site </h4>
@@ -147,16 +147,17 @@ class UppdateSiteComponent extends Component {
 }
 
 UppdateSiteComponent.propTypes = {
-    getUsersById: PropTypes.func.isRequired,
-    AddNewSite: PropTypes.func.isRequired
+    getSitesById: PropTypes.func.isRequired,
+    updateSite: PropTypes.func.isRequired
 
 };
 
 const mapStateToProps = state => ({
+    site: state.site,
     user: state.user.user
 
 });
 
 export default connect(
     mapStateToProps,
-    {getUsersById, AddNewSite})(UppdateSiteComponent);
+    {getSitesById, updateSite})(UppdateSiteComponent);

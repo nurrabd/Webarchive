@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SiteService {
@@ -16,20 +17,16 @@ public class SiteService {
    private SiteRepo siteRepo;
 
     public List<Site> getAll() {
-
         return siteRepo.findAll();
     }
 
     public void register(Site site){
-       // if(user.getEmail().equals(userRepo.findAll().forEach();)){
-
-        //}
-
         siteRepo.save(site);
-
     }
 
 
+    public Site update(Site l, int id) {
+      return new Site();
 
-
+    }
 }

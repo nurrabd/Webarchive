@@ -16,7 +16,7 @@ public class DataIntilizer {
         System.out.println("is working");
         User user = new User();
         user.setEmail("nurhusein11@gmail.com");
-        user.setName("nurhusein");
+
         user.setPassword("1122");
         userService.register(user);
     }

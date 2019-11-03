@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -28,16 +29,15 @@ public class UserService {
     }
 
     public User login(User user){
-
-
         User newUser = userRepo.findByEmail(user.getEmail());
-
                 if(newUser.getPassword().equals(user.getPassword())){
                     return newUser;
-
                 }
                 return null;
     }
 
+    public User findUserById(int id){
+        return userRepo.findByUserId(id);
+    }
 
 }

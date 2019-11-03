@@ -4,6 +4,7 @@ import com.nur.Webarchivebackend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin
@@ -29,6 +30,11 @@ public class UserController {
         return userService.login(user);
     }
 
+    @GetMapping("/findUserById/{id}")
+    public User getUserById(@PathVariable int id){
+
+        return  userService.findUserById(id);
+    }
 
 
 }

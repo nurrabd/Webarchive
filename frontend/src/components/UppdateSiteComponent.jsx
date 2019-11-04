@@ -136,13 +136,14 @@ class UppdateSiteComponent extends Component {
                                 <div className="col">
                                     <p/>
                                     <button type="submit" Style="width:100%; height:50px"
-                                            className="btn-primary" variant="outline-danger"> Continue
+                                            className="btn-primary fas fa-edit " variant="outline-danger"> update
                                     </button>
                                     <p/>
                                 </div>
                             </div>
                         </form>
                         <Button
+                            className="fas fa-trash-alt"
                             variant="outline-danger"
                             size="lg"
                             block

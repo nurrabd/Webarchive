@@ -5,9 +5,9 @@
       <change beforePath="$PROJECT_DIR$/../backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/nur/Webarchivebackend/controller/SiteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/nur/Webarchivebackend/controller/SiteController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/nur/Webarchivebackend/service/SiteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/nur/Webarchivebackend/service/SiteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/nur/Webarchivebackend/utility/DataIntilizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/nur/Webarchivebackend/utility/DataIntilizer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/target/classes/com/nur/Webarchivebackend/controller/SiteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/target/classes/com/nur/Webarchivebackend/controller/SiteController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/target/classes/com/nur/Webarchivebackend/service/SiteService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/target/classes/com/nur/Webarchivebackend/service/SiteService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,8 +23,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/SitePage.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="25" column="72" selection-start-line="25" selection-start-column="72" selection-end-line="25" selection-end-column="72" />
+            <state relative-caret-position="134">
+              <caret line="50" column="21" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -33,12 +33,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Desktop/router-master/src/components/PostShow.js">
+        <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-222">
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="298">
+              <caret line="33" column="93" selection-start-line="33" selection-start-column="93" selection-end-line="33" selection-end-column="93" />
             </state>
           </provider>
         </entry>
@@ -70,8 +68,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/UppdateSiteComponent.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="148" column="59" selection-start-line="148" selection-start-column="59" selection-end-line="148" selection-end-column="59" />
+            <state relative-caret-position="317">
+              <caret line="138" column="79" selection-start-line="138" selection-start-column="79" selection-end-line="138" selection-end-column="79" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -157,9 +155,10 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/reducers/siteReducer.js" />
-        <option value="$PROJECT_DIR$/src/components/UppdateSiteComponent.jsx" />
         <option value="$PROJECT_DIR$/src/actions/Actions.js" />
         <option value="$PROJECT_DIR$/src/components/AddSiteComponent.jsx" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/src/components/UppdateSiteComponent.jsx" />
         <option value="$PROJECT_DIR$/src/components/SitePage.jsx" />
       </list>
     </option>
@@ -182,6 +181,11 @@
             <path>
               <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
@@ -257,12 +261,12 @@
       <option name="presentableId" value="Default" />
       <updated>1572514732582</updated>
       <workItem from="1572514735673" duration="688000" />
-      <workItem from="1572556568913" duration="23963000" />
+      <workItem from="1572556568913" duration="25439000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24651000" />
+    <option name="totallyTimeSpent" value="26127000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="796" extended-state="0" />
@@ -466,10 +470,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="33" column="93" selection-start-line="33" selection-start-column="93" selection-end-line="33" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/UppdateSiteComponent.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="148" column="59" selection-start-line="148" selection-start-column="59" selection-end-line="148" selection-end-column="59" />
+        <state relative-caret-position="317">
+          <caret line="138" column="79" selection-start-line="138" selection-start-column="79" selection-end-line="138" selection-end-column="79" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -488,8 +499,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/SitePage.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="25" column="72" selection-start-line="25" selection-start-column="72" selection-end-line="25" selection-end-column="72" />
+        <state relative-caret-position="134">
+          <caret line="50" column="21" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>

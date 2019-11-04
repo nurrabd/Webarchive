@@ -24,10 +24,12 @@ class SitePage extends Component {
                     Site description:  {list.description}
                     <br/>
                     <Link className="glyphicon glyphicon-plus"  to={`${list.url}`}>
-                     Sit url :    {list.url}
+                      {list.url}
                     </Link>
 
+
                         <br/>
+                        <p/>
                     <Link className="glyphicon glyphicon-plus"  to={`/EditSite/${list.siteId}`}>
                        Edit or delete
                     </Link>
@@ -43,9 +45,10 @@ class SitePage extends Component {
 
         return (
             <div>
-                <Link className="glyphicon glyphicon-plus"  to={`/addSite`}>
-                    Add new Site
+                <Link className="fas fa-plus"     to={`/addSite`}>
+                   <h6>Add new Site</h6>
                 </Link>
+                <hr/>
 
                 <div Style="margin-top: 50px" />
 

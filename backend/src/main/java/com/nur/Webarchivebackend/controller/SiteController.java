@@ -22,6 +22,11 @@ public class SiteController {
         return siteService.getAll();
     }
 
+    @GetMapping("/findSiteById/{id}")
+    public Site getUserById(@PathVariable int id){
+        return  siteService.findSiteById(id);
+    }
+
     @PostMapping("/register")
     public String register(@RequestBody Site site)  {
         siteService.register(site);

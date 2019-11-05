@@ -1,4 +1,5 @@
 package com.nur.Webarchivebackend.utility;
+import com.nur.Webarchivebackend.model.Site;
 import com.nur.Webarchivebackend.model.User;
 import com.nur.Webarchivebackend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import javax.annotation.PostConstruct;
 public class DataIntilizer {
     @Autowired
    private  UserService userService;
+    private Site site;
 
 
     @PostConstruct

@@ -27,7 +27,13 @@ public class SiteService {
 
     public Site update(Site l, int id) {
 
-      return new Site();
+      Site site = siteRepo.findBySiteId(id);
+      site.setColor(l.getColor());
+      site.setDescription(l.getDescription());
+      site.setUrl(l.getUrl());
+      System.out.println(site.getSiteId());
+      return siteRepo.save(site);
+
 
     }
 
@@ -37,4 +43,9 @@ public class SiteService {
         siteRepo.deleteById(id);
         return ";";
     }
+
+    public Site findSiteById(int id){
+        return siteRepo.findBySiteId(id);
+    }
+
 }
